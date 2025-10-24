@@ -17,26 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Theme toggle with persistence
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = (() => {
-    try { return localStorage.getItem('uit-theme'); } catch(e){ return null; }
-  })();
-  const initialLight = savedTheme ? savedTheme === 'light' : !prefersDark;
-  if (initialLight) document.documentElement.classList.add('light');
-  const themeBtn = document.querySelector('.theme-toggle');
-  const setTheme = (mode) => {
-    document.documentElement.classList.toggle('light', mode === 'light');
-    try { localStorage.setItem('uit-theme', mode); } catch(e){}
-    if (themeBtn) themeBtn.setAttribute('aria-pressed', String(mode === 'light'));
-  };
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const isLight = document.documentElement.classList.contains('light');
-      setTheme(isLight ? 'dark' : 'light');
-    });
-    themeBtn.setAttribute('aria-pressed', String(initialLight));
-  }
+  // Theme is always dark; removed toggle logic
 
   // Optional: swap BASE_URL placeholders for local preview
   const base = document.querySelector('link[rel=canonical]')?.getAttribute('href') || '';

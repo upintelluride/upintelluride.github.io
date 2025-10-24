@@ -7,15 +7,7 @@
   --accent:#1f6b46; /* evergreen accent */
 }
 
-/* Light theme tokens */
-:root.light{
-  --bg:#faf6ea; /* parchment */
-  --card:#ffffff;
-  --text:#0e1a14; /* deep green text */
-  --muted:#5f6b61; /* grey-green */
-  --brand:#b68c2a; /* warm gold */
-  --accent:#256143;
-}
+/* Light theme removed: site is always dark */
 
 *{box-sizing:border-box}
 html{
@@ -47,9 +39,6 @@ html,body{
   background:linear-gradient(to bottom, rgba(10,22,40,0.9), rgba(10,22,40,0.6));
   backdrop-filter: blur(8px);
 }
-.light .site-header{
-  background:linear-gradient(to bottom, rgba(247,251,255,0.9), rgba(247,251,255,0.7));
-}
 .header-inner{
   display:flex;
   align-items:center;
@@ -72,7 +61,6 @@ html,body{
   gap:4px;
   cursor:pointer;
 }
-.light .menu-toggle{ border-color: rgba(0,0,0,0.12); }
 .menu-toggle .bar{
   width:22px; height:2px; background:var(--text); display:block;
 }
@@ -87,7 +75,6 @@ html,body{
   border-bottom:1px solid rgba(255,255,255,0.08);
   padding:1rem clamp(1rem, 4vw, 2rem);
 }
-.light .site-nav{ border-bottom-color: rgba(0,0,0,0.08); }
 .site-nav.open{ transform:none; opacity:1; visibility:visible; }
 .site-nav a{
   display:inline-block;
@@ -113,13 +100,9 @@ html,body{
   display:flex; align-items:center; gap:6px;
   cursor:pointer;
 }
-.light .theme-toggle{ border-color: rgba(0,0,0,0.12); }
-.theme-toggle .sun{ display:none; }
-.light .theme-toggle .sun{ display:inline; }
-.light .theme-toggle .moon{ display:none; }
+.theme-toggle{ display:none; }
 
 .header-divider{ height:1px; background:rgba(255,255,255,0.08); }
-.light .header-divider{ background:rgba(0,0,0,0.06); }
 
 /* Hero Section */
 .hero-simple{
@@ -261,7 +244,6 @@ html,body{
 
 .btn-primary{ background:var(--brand); color:#001219; }
 .btn-outline{ background:transparent; color:var(--text); border:1.5px solid rgba(255,255,255,0.2); }
-.light .btn-outline{ border-color: rgba(0,0,0,0.15); }
 .btn-outline:hover{ background:rgba(255,255,255,0.06); }
 
 .btn:hover{
@@ -323,7 +305,6 @@ html,body{
   text-align:left;
   box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
-.light .card{ border-color: rgba(0,0,0,0.06); box-shadow:0 6px 18px rgba(0,0,0,0.06); }
 .card-icon{ font-size:1.5rem; }
 .card h3{ margin:0.5rem 0 0.25rem; }
 .card p{ margin:0; color:var(--muted); }
